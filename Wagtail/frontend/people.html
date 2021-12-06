@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My first Vue App</title>
+        <meta charset="UTF-8">
+        <script src=https://cdn.jsdelivr.net/npm/vue/dist/vue.js></script>
+        <script src=https://unpkg.com/axios/dist/axios.min.js></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Workshop People</h1>
+            <ul>
+                <li v-for="person in people">
+                    {{ person.name }}
+                </li>
+            </ul>
+        </div>
+        <script>
+            const app = new Vue({
+                el: '#app',
+                data () {
+                    return {
+                        people: []
+                    }
+                },
+                mounted () {
+                    axios
+                    .get('http://myjson.dit.upm.es/api/bins/hisn')
+                    .then(response => (this.people = response.data))
+                }
+            })
+        </script>
+    </body>
+</html>
