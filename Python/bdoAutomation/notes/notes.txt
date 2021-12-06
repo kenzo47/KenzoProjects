@@ -1,0 +1,2 @@
+Since PyAutoGUI awaits keyboard/mouse inputs from the OS, games sometimes connect to the I/O unit directly, superceding the OS.
+Making PyAutoGUI not work while the game window has focus.

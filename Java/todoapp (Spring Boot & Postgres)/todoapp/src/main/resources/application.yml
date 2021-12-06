@@ -1,0 +1,29 @@
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/todoapp
+    username: postgres
+    password: Kappa123
+    pool-size: 50
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:postgresql://localhost:5432/todoapp
+      username: root
+      password: Kappa123
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+    show-sql: true
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  messages:
+    basename: validation
+logging:
+  level:
+    root: WARN
+    com.kenzo47.todoapp: DEBUG
