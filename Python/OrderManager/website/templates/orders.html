@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Orders{% endblock%}
+{% block content %}
+<h1 align="center">Orders</h1>
+<label for="suppliers">Supplier</label>
+<select name="suppliers" id="suppliers">
+    <option value="fone">Foneday</option>
+    <option value="gpc">GSM Parts Center</option>
+    <option value="twin">Twindis</option>
+    <option value="hwc">HardwareCity</option>
+    <option value="cop">Copaco</option>
+    <option value="td">Techdata</option>
+    <option value="2by2">2BY2</option>
+    <option value="itr">IT-Resellers</option>
+    <option value="sl">Secondlife</option>
+    <option value="pa">PrintAbout</option>
+    <option value="for">Forza Refurbished</option>
+</select>
+<br/>
+<ul class="list-group list-group-flush" id="orders">
+    {% for order in user.orders %}
+        <li class="list-group-item">
+            {{ order.data }}
+                <button type="button" class="close" onClick="deleteOrder({{ order.id }})">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </li>
+    {% endfor %}
+</ul>
+<form method="POST">
+    <textarea name="order" id="order" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Order</button>
+    </div>
+</form>
+{% endblock %}

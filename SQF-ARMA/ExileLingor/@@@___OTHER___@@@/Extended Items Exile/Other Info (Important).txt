@@ -1,0 +1,115 @@
+HELP! I CAN SEE ARMA 3 HUD, EXILE BROKENED!
+
+This is a simple fix, inside of your mission file and in the description.ext simple make sure the SECOND option in showHUD is set to FALSE, as seen below.
+
+showHUD[] =
+{
+    true,   // Scripted HUD (same as showHUD command)
+    false,   // Vehicle + soldier info        <--- THIS ONE <--- THIS ONE <--- THIS ONE
+    false,   // Vehicle radar
+    true,   // Vehicle compass
+    true,   // Tank direction indicator
+    true,  // Commanding menu
+    false,  // Group Bar
+    true,   // HUD Weapon Cursors
+    true	// Vehicle Panel (Required for GPS)
+};
+
+
+The blueprint system, very quick overview.
+
+The item called "Old Document" can be double clicked and when you click the "Use" button for it, it will spawn a random blueprint from a list of all blueprints, the more common blueprints are less useful and the rare blueprints are more coveted.
+Once that blueprint is spawned, players will be able to use that blueprint to craft that item, BUT you as the server owner must refer to the recipes text file to see how this is done in the config, but it is quite simple to explain.
+Inside of a specific recipe, lets say code lock. You must add the code lock blueprint to the required items section, aswell as the returned item section so players get their blueprint back.
+
+This system IMO helps with progression in Exile greatly as it adds another layer that players have to get through to obtain what they want, these items can also be traded for between players who need specific blueprints, 
+they can be come a commodity in your server, players can haggle for blueprints to build their base or progress further doing whatever they are trying to do. Refer to the recipe file to get a better understanding of the system, 
+as it is linked with crafting, just check out the recipes and youll understand pretty quick, thanks!
+
+
+To utalize the Advanced Workbench as a "Rank 2" workbench for higher tier crafting, you must add it to your config
+You must add a new config entry called advancedworkbench as seen below, ASWELL as adding the advanced workbenches model to the original one, so you can use the advanced workbench for tier 1 and 2 crafting.
+You can find this in the config.cpp inside the mission file
+
+class CfgInteractionModels
+{
+	class WorkBench
+	{
+		name = "Work Bench";
+		models[] = 
+		{
+			"workstand_f.p3d",
+			"workbench_01_f.p3d"
+		};
+	};
+	
+	class AdvancedWorkbench
+	{
+		name = "Advanced Workbench";
+		models[] = 
+		{
+			"workbench_01_f.p3d"
+		};
+	};
+};
+
+To make items only craftable at an advanced workbench, make sure to have this config entry inside of your crafting recipes
+
+requiredInteractionModelGroup = "AdvancedWorkbench";
+
+OR 
+
+requiredInteractionModelGroup = "WorkBench";
+
+AdvancedWorkbench entries will be considered "Tier 2 Crafting" where as WorkBench entries will be considered "Tier 1 Crafting" thus adding additional progression once players build their first base, 
+remember its YOUR server, so you decide how it goes.
+
+This is an example, the first recipe is a "tier 2 recipe" requiring the harder to build advanced workbench, where as the second recipe is easier to craft only requiring the basic workbench, "Tier 1"
+
+	class CraftRepairKitMetal: Exile_AbstractCraftingRecipe
+	{
+		name = "Craft Metal Repair Kit";
+		pictureItem = "Exile_Item_RepairKitMetal";
+		requiresFire = 0;
+		requiredInteractionModelGroup = "AdvancedWorkbench";
+		tools[] = 
+		{
+			"Exile_Item_Hammer",
+			"Exile_Item_Grinder",
+			"Exitem_torch"
+		};
+		returnedItems[] = 
+		{
+			{1, "Exitem_blueprint_fortification"},
+			{1, "Exile_Item_RepairKitMetal"}
+		};
+		components[] = 
+		{
+			{1, "Exitem_blueprint_fortification"},
+			{2, "Exile_Item_MetalPole"},
+			{4, "Exile_Item_MetalBoard"},
+			{1, "Exitem_nails"}
+		};
+	};
+	
+	class CraftRepairKitWood: Exile_AbstractCraftingRecipe
+	{
+		name = "Craft Wood Repair Kit";
+		pictureItem = "Exile_Item_RepairKitWood";
+		requiresFire = 0;
+		requiredInteractionModelGroup = "WorkBench";
+		tools[] = 
+		{
+			"Exile_Item_Hammer",
+			"Exile_Item_Handsaw",
+			"Exitem_measuringtape"
+		};
+		returnedItems[] = 
+		{
+			{1, "Exile_Item_RepairKitWood"}
+		};
+		components[] = 
+		{
+			{4, "Exile_Item_WoodPlank"}
+		};
+	};

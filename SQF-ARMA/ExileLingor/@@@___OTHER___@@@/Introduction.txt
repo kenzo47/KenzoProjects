@@ -1,0 +1,41 @@
+**Tripwire Gaming Community - Exile Lingor PvP**
+
+A fresh new Exile server with a lot of additional scripts and addons, we're one of the few Lingor Exile servers. 
+The server is built with PvP in mind and is balanced around progression.
+You start off with access to basic weapons and gear in traders. Nothing is free and high caliber weapons are rare.
+Development of the server is still in an early stage but we have quite a lot of features already with a lot more additions coming soon.
+
+Starting a server is one of the hardest things to do, especially in a 7 year old game with a small playerbase but we're here to stick around.
+Player count will be low in the beginning and we're not sure if there's an interest for the Exile experience on the not so well known lingor map.
+Early players do have an advantage over the others though :wink:
+
+Our server has all the usual stuff like DMS Missions, Capture Points, Zombies and Hordes. 
+
+_Installed scripts: _
+```XS Spawn, Server Info Menu, R3F Logistics, Advanced Towing, ExileZ, DMS, ZCP, Loadout, SafeX, Dual Arms, Virtual Garage,
+Crate Selling, Enigma Revive, Abandon Territory, Quadbike deploy, Statusbar, Claim Vehicle Script, Extra performance scripts```
+
+More information and our discord can be found in the in-game Server Info Menu.
+
+```IP: 51.195.63.13```
+```Port: 2302```
+```Map : Lingor Island```
+
+_Required Workshop Mods:_
+```
+• CBA_A3
+• Lingor-Dingor Island
+• CUP Terrains - Core
+• CUP Vehicles
+• CUP Terrains - Maps
+• CUP Units
+• CUP Weapons
+• Dual Arms - Two Primary Weapons
+• Extended_Base_Mod
+• Extended_Items_Exile
+• RwG Addon Base Building Exile
+• Enhanced Movement
+• Zombies and Demons
+• Universal Uniforms
+• Universal Uniforms - CUP Edition
+```

@@ -1,0 +1,102 @@
+#define true 1
+#define false 0
+// Required for the XM8, do not remove!
+#include "RscDefines.hpp"
+#include "custom\SafeX\safeXDialog.hpp" //!!! Keep below RscDefines.hpp !!!
+///////////////////////////////////////////////////////////////////////////////
+// Server Settings - Modify at will
+///////////////////////////////////////////////////////////////////////////////
+author = "TripwireGamingCommunity";
+onLoadName = "[TGC] Exile Lingor";
+onLoadMission= "www.exilemod.com";
+loadScreen = "tripwire.paa";
+disableChannels[] = {0, 2};
+OnLoadIntro = "";
+OnLoadIntroTime = false;
+OnLoadMissionTime = false;
+
+class Header
+{
+    gameType = Survive; // Do NOT change this
+    minPlayers = 1;
+    maxPlayers = 60;
+};
+
+class RscTitles
+{
+	// Status Bar
+	#include "custom\StatusBar\statusBar.hpp"
+};
+
+// scarCODE ServerInfoMenu
+#include "custom\scarCODE\ServerInfoMenu\hpp\CfgServerInfoMenu.hpp"
+#include "custom\scarCODE\ServerInfoMenu\hpp\RscDisplayServerInfoMenu.hpp"
+
+///////////////////////////////////////////////////////////////////////////////
+// Exile Settings - Do not change these!
+///////////////////////////////////////////////////////////////////////////////
+forceRotorLibSimulation = 2;
+skipLobby = 1;
+joinUnassigned = 1;
+respawn = "BASE";
+respawnDelay = 120;
+respawnDialog = 0;
+respawnOnStart = 0;
+respawnButton = 1;
+respawnTemplates[] = {"Exile"};
+corpseManagerMode = 0;
+corpseLimit = 30;
+corpseRemovalMinTime = 1800;
+corpseRemovalMaxTime = 3600;
+wreckManagerMode = 0;
+wreckLimit = 2;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 360;
+scriptedPlayer = 1;
+disabledAI = 1;
+enableItemsDropping = 0;
+briefing = 0;
+debriefing = 0;
+allowFunctionsLog = 1;
+enableDebugConsole = 0;
+allowFunctionsRecompile = 0;
+showSquadRadar = 0;
+showUAVFeed = 0;
+reviveDelay = 6;
+reviveForceRespawnDelay = 3;
+reviveBleedOutDelay = 150;
+
+showHUD[] =
+{
+    true,   // Scripted HUD (same as showHUD command)
+    true,   // Vehicle + soldier info
+    false,   // Vehicle radar
+    false,   // Vehicle compass
+    false,   // Tank direction indicator
+    false,  // Commanding menu
+    false,  // Group Bar
+    true,   // HUD Weapon Cursors
+    true   // Vehicle Panel (Required for GPS)
+};
+
+#include "config.cpp"
+
+// infiSTAR Includes
+#include "CfgRemoteExec.hpp" // InfiSTAR
+#include "infiSTAR_defines.hpp" // InfiSTAR
+#include "infiSTAR_AdminMenu.hpp" // InfiSTAR
+#include "infiSTAR_chat.hpp" // InfiSTAR
+#include "infiSTAR_KeyBinds.hpp" // InfiSTAR
+
+// Dual Arms overrides needed for exile
+#include "custom\dual_arms\CfgSecondaryWeapons.hpp"
+
+//BaseSpawn en Halojump
+#include "custom\xs\spawn\Dialog\xsSpawnDefines.hpp"
+#include "custom\xs\spawn\Dialog\xsSpawnDiaglog.hpp"
+
+//R3F Logistics
+#include "R3F_LOG\desc_include.h"
+
+//Exile Loadouts
+#include "custom\loadouts\loadoutDialog.hpp"
