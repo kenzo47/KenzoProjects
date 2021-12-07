@@ -218,20 +218,10 @@ _badNamesPartialTMP = _badNamesPartial;_badNamesPartial = [];{_badNamesPartial p
 _badGroupNamesTMP = _badGroupNames;_badGroupNames = [];{_badGroupNames pushBackUnique (toLower _x);}forEach _badGroupNamesTMP;
 diag_log format['<infiSTAR.de> %1 - loading AntiHack..',time];
 
-_verybadStrings =
-[
-	'player scripts','menu loaded','kill target','no recoil','rapid fire','explode all',
-	'destroyall','destroy all','g-e-f','box-esp','god on','unlimited mags','ve-hicles',
-	'infishit','cheatmenu','e5sp','in54nity','infinite ammo',' is god','spawn (local)',
-	'spawn menu','toggleable','teleport all','teleportall','jaymenu','titanmods',
-	'kill all','grimbae','pony menu','35sp','insert script','3x3cutor','c4sh',
-	't e l e p o r t','explosive bullets','eject eve','hacked by ','playah visuals',
-	'niggor','aimbot','god mod'
-];
 if(_useBlacklistedVariableCheck)then{
 	_blacklistedVariables append 
 	[
-		'shit','whsh506_m41n','finifeaturesformatted','nigger_init','bmcloos','exile_slayexiles',
+		'shit','whsh506_m41n','finifeaturesformatted','nignog_init','bmcloos','exile_slayexiles',
 		'buttons','fnc_adminreq','opnmemeu','firstload','nss_ac_openvvs','nss_ac_openvas','nss_ac_setcaptive',
 		'nss_ac_invisible','nss_ac_mapteleport','nss_ac_opencode','nss_ac_freecam','nss_ac_godmode','nss_ac_execscript',
 		'nss_ac_openspectator','menuinit','mlrn_re','im_a_variable','jay_vehicle_list',
@@ -241,19 +231,12 @@ if(_useBlacklistedVariableCheck)then{
 _blacklistedAdminVariables =
 [
 	'fn_adminsetvariable','fnc_admin_c','fnc_admin_cc','fn_acr',
-	'ah_hacklogarray','ah_survlogarray','ah_admilogarray','babecore_escm_mousepos','typed_chat_text','xeidiousisanegro','targetplayer',
+	'ah_hacklogarray','ah_survlogarray','ah_admilogarray','babecore_escm_mousepos','typed_chat_text','targetplayer',
 	'fnc_infiadminkeydown','main_display_id','fnc_disconnect_selected','fnc_adminlog','go_in_nearestvehicle_callmevar','norecoilrun',
 	'fnc_custom_fn_loadinventory','admin_local_marker','allow_me_this_keybind','freeflightcam','fnc_buttonclick_44466','fnc_lbselchanged_left','unlimammrun',
 	'fnc_infistar_a3norecoil','vehboost_function','fnc_infistar_get_leftclicks','infistar_main_code','fnc_get_plr'
 ];
 
-_tofindvar =
-[
-	'xxx_','k3ybinds','jme_','infistatus',
-	'godmode','speedhack','no grass','remote menu',
-	'currentmenu',' is god','_m0de','fuck_','m3nu',
-	'_escorttt','c10th3s'
-];
 _tofindcontent =
 [
 	'+ _code +','infiesp'
