@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Routing</title>
+        <meta charset="UTF-8">
+        <script src=https://cdn.jsdelivr.net/npm/vue/dist/vue.js></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script src=https://unpkg.com/axios/dist/axios.min.js></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Routing Demo</h1>
+            <p>
+                <router-link to="/solana">Go to Solana</router-link>
+                <router-link to="/cardano">Go to Cardano</router-link>
+            </p>
+            <router-view></router-view>
+        </div>
+        <script>
+            const Solana = { template: '<div>Solana (SOL)</div>' }
+            const Cardano = { template: '<div>Cardano (ADA)</div>' }
+            const routes = [
+                { path: '/solana', component: Solana },
+                { path: '/cardano', component: Cardano }
+            ]
+            const router = new VueRouter({
+                routes
+            })
+            const app = new Vue({
+                router
+            }).$mount('#app')
+        </script>
+    </body>
+</html>
